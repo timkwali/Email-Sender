@@ -19,6 +19,21 @@ let transporter = nodemailer.createTransport({
     }
 })
 
+let mailOptions = {
+    from: 'timringperez@gmail.com',
+    to: 'timringperez@gmail.com',
+    subject: 'Email Sender App',
+    text: 'This is an example to test my nodemailer app'
+}
+
+transporter.sendMail(mailOptions, (err, data) => {
+    if(err) {
+        console.log(`Error ${err}`)
+    } else {
+        console.log("Email sent successfully")
+    }
+})
+
 //2. Create MailOptions object
 //3. Use Transporter.sendMail
 
