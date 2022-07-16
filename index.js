@@ -19,6 +19,7 @@ let transporter = nodemailer.createTransport({
     }
 })
 
+//2. Create MailOptions object
 let mailOptions = {
     from: 'timringperez@gmail.com',
     to: 'timringperez@gmail.com',
@@ -26,6 +27,7 @@ let mailOptions = {
     text: 'This is an example to test my nodemailer app'
 }
 
+//3. Use Transporter.sendMail
 transporter.sendMail(mailOptions, (err, data) => {
     if(err) {
         console.log(`Error ${err}`)
@@ -33,9 +35,6 @@ transporter.sendMail(mailOptions, (err, data) => {
         console.log("Email sent successfully")
     }
 })
-
-//2. Create MailOptions object
-//3. Use Transporter.sendMail
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
